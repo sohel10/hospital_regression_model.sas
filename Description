@@ -1,5 +1,9 @@
 Medicare Hospital Cost Modeling Using SAS
-Developed a predictive model using publicly available CMS Provider-Specific File (PSF) data to analyze how hospital characteristics influence Medicare-adjusted cost per inpatient discharge. Implemented generalized linear modeling in SAS Studio to evaluate the effect of case mix index, teaching intensity, hospital efficiency, and value-based purchasing adjustments. Generated reproducible statistical output using ODS and exported results for stakeholder interpretation. This independent project demonstrates practical SAS programming skills and health policy modeling expertise.
+Developed a predictive model using publicly available CMS Provider-Specific File (PSF) data to analyze how hospital characteristics
+influence Medicare-adjusted cost per inpatient discharge. Implemented generalized linear modeling in SAS Studio to evaluate the effect 
+of case mix index, teaching intensity, hospital efficiency, and value-based purchasing adjustments. Generated reproducible statistical 
+output using ODS and exported results for stakeholder interpretation. This independent project demonstrates practical SAS programming 
+skills and health policy modeling expertise.
 
 Key methods & tools:
 
