@@ -1,60 +1,51 @@
-# hospital_regression_model.sas
-from docx import Document
+# Create a GitHub-friendly README.md for hospital cost modeling project
+readme_md_content = """
+# Medicare Hospital Cost Modeling Using SAS
 
-# Create a README for the hospital regression project using CMS PSF data
+This project models Medicare inpatient facility costs using CMS public data and SAS.
+It demonstrates how generalized linear models (GLM) can be used to explain variation in 
+case-mix adjusted costs based on hospital-level characteristics like teaching status, 
+cost-to-charge ratios, and value-based payment adjustments.
 
-doc.add_heading("Medicare Inpatient Facility Cost Modeling (SAS)", level=1)
+## 📊 Dataset
+- Source: [CMS Provider-Specific File (PSF)](https://www.cms.gov/)
+- File used: `ipsf_inp_2025_04_01.sas7bdat` (not redistributed)
+- Data type: Hospital-level Medicare payment factors
 
-doc.add_paragraph(
-    "This project demonstrates how to use publicly available CMS Provider-Specific File (PSF) data "
-    "to model adjusted inpatient cost per discharge using SAS. The script is designed for "
-    "educational and portfolio purposes and is independent of any institutional or grant-funded research."
-)
+## 🎯 Objective
+To predict `caseMixAdjustedCostPerDischarge_` using:
+- Case mix index (`caseMixIndex`)
+- Teaching intensity (`internsToBedsRatio`)
+- Operational efficiency (`operatingCostToChargeRatio`)
+- Value-based payment adjustments (`vbpAdjustment`)
+- Low volume rural adjustment (`lowVolumeAdjustmentFactor`)
 
-doc.add_heading("📊 Dataset", level=2)
-doc.add_paragraph(
-    "- Source: CMS Provider-Specific File (PSF)\n"
-    "- File: ipsf_inp_2025_04_01.sas7bdat\n"
-    "- Data includes hospital-level information on Medicare payment adjustment variables"
-)
+## 🧪 Methods
+- Data prepared and modeled using `PROC MEANS` and `PROC GLM` in SAS
+- Teaching indicator derived from interns-to-beds ratio
+- Reproducible output exported using ODS HTML
 
-doc.add_heading("🎯 Objective", level=2)
-doc.add_paragraph(
-    "To build a generalized linear model that explains variation in case-mix adjusted cost per discharge "
-    "based on operational and policy-relevant hospital variables."
-)
+## 📁 Files
+- `hospital_model_with_ods.sas`: SAS script (data prep, modeling, ODS export)
+- `hospital_model_output.pdf`: PDF export from ODS
+- `README.md`: This project summary
 
-doc.add_heading("🧪 Methods", level=2)
-doc.add_paragraph(
-    "- Created a derived variable for 'teaching hospital' based on interns-to-beds ratio\n"
-    "- Summarized hospital characteristics by teaching status using `proc means`\n"
-    "- Modeled cost per discharge using `proc glm` with key predictors:\n"
-    "    - caseMixIndex\n"
-    "    - bedSize\n"
-    "    - operatingCostToChargeRatio\n"
-    "    - internsToBedsRatio\n"
-    "    - vbpAdjustment\n"
-    "    - lowVolumeAdjustmentFactor"
-)
+## ✅ Highlights
+- Transparent, documented healthcare modeling in SAS
+- Ready for use in analytics portfolio or private GitHub
+- Demonstrates applied public health data science skills
 
-doc.add_heading("📁 Files", level=2)
-doc.add_paragraph(
-    "- `hospital_model_with_ods.sas`: Complete SAS script with ODS output\n"
-    "- `hospital_model_output.html`: Resulting report (to be generated in SAS Studio)\n"
-    "- `ipsf_inp_2025_04_01.sas7bdat`: CMS PSF input data file (not included for distribution)\n"
-    "- `README.docx`: This document"
-)
+## 🔒 Disclaimer
+This project is independently conducted for educational purposes using public data. 
+It is not affiliated with any institution or internal research project.
 
-doc.add_heading("⚕️ Use Case", level=2)
-doc.add_paragraph(
-    "This project is ideal for demonstrating SAS modeling skills in the context of healthcare cost analysis. "
-    "It is suitable for job applications in pharma, public health analytics, or health policy data science roles."
-)
+---
+**Author**: Md Sohel Ahmed, PhD – Lead Statistician
+"""
 
-doc.add_heading("Author", level=2)
+# Save the markdown file
+readme_md_path = "/mnt/data/README_hospital_model.md"
+with open(readme_md_path, "w") as f:
+    f.write(readme_md_content)
 
-
-readme_path = "/mnt/data/README_Hospital_Model_CMS.docx"
-doc.save(readme_path)
-
-readme_path
+readme_md_path
