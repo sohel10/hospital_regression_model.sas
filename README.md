@@ -2,7 +2,6 @@
 from docx import Document
 
 # Create a README for the hospital regression project using CMS PSF data
-doc = Document()
 
 doc.add_heading("Medicare Inpatient Facility Cost Modeling (SAS)", level=1)
 
@@ -53,7 +52,7 @@ doc.add_paragraph(
 )
 
 doc.add_heading("Author", level=2)
-doc.add_paragraph("Md Sohel Ahmed, PhD – Lead Statistician")
+
 
 readme_path = "/mnt/data/README_Hospital_Model_CMS.docx"
 doc.save(readme_path)
